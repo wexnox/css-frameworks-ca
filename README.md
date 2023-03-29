@@ -1,2 +1,2 @@
-# css-frameworks-ca
-Replace this text with a description of your social media project.
+# CSS Frameworks CA
+This is the Start of CSS Framework class @ Noroff
