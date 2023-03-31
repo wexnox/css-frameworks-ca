@@ -1,8 +1,23 @@
 // import {resolve} from 'path'
 import path, {resolve} from 'path'
+import eslint from 'vite-plugin-eslint';
 import {defineConfig} from 'vite';
 
 export default defineConfig({
+    plugins: [
+        { // default settings on build (i.e. fail on error)
+            ...eslint(),
+            apply: 'build',
+        },
+        { // do not fail on serve (i.e. local development)
+            ...eslint({
+                failOnWarning: false,
+                failOnError: false,
+            }),
+            apply: 'serve',
+            enforce: 'post'
+        },
+    ],
     build: {
         rollupOptions: {
             input: {
